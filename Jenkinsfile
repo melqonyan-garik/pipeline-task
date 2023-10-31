@@ -20,7 +20,7 @@ pipeline {
 
 stage('Deploy to Tomcat') {
     steps {
-        bat 'xcopy /Y target\\spring-mvc-app1-0.0.1-SNAPSHOT.war "C:\\Program Files\\Apache Tomcat\\webapps\\"'
+        bat 'xcopy /Y target\\spring-mvc-app1-0.0.1-SNAPSHOT.war "C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps"'
     }
 }
     }
