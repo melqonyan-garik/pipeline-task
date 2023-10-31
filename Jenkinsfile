@@ -10,6 +10,18 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+       stage('SonarQube') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    bat 'mvn sonar:sonar'
+                }
+            }
+        }
 
+        stage('Deploy to Tomcat') {
+            steps {
+                bat 'copy target\\spring-mvc-app1-0.0.1-SNAPSHOT.war C:\\path\\to\\tomcat\\webapps\\'
+            }
+        }
     }
 }
