@@ -7,5 +7,6 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+
     }
 }
